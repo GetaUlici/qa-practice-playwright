@@ -9,10 +9,10 @@ Automated end-to-end tests for [**QA Practice App**](https://qa-practice.razvanv
 
 ## 🚀 Tech Stack
 
-- [🎭 **Playwright**](https://playwright.dev/) – Browser automation framework  
-- 💙 **TypeScript** – Strongly typed language support  
-- 🧩 **POM (Page Object Model)** – Clean, maintainable structure  
-- 🧪 **Playwright Test Runner** – Built-in assertions & HTML reports  
+- [🎭 **Playwright**](https://playwright.dev/) – Browser automation framework
+- 💙 **TypeScript** – Strongly typed language support
+- 🧩 **POM (Page Object Model)** – Clean, maintainable structure
+- 🧪 **Playwright Test Runner** – Built-in assertions & HTML reports
 
 ---
 
@@ -123,8 +123,8 @@ export class LoginPage {
 
 ## 💡 Tips & Best Practices
 
-- Keep **selectors** and **page actions** isolated inside Page Object files.  
-- Use **fixtures** for test data and setup logic.  
+- Keep **selectors** and **page actions** isolated inside Page Object files.
+- Use **fixtures** for test data and setup logic.
 - Run tests interactively with:
   ```bash
   npx playwright test --ui
@@ -138,16 +138,15 @@ export class LoginPage {
 
 ## 📊 Reports & Artifacts
 
-| Type | Command | Description |
-|------|----------|-------------|
-| 🧾 **HTML Report** | `npx playwright show-report` | Opens the full test report |
-| 🎥 **Trace Viewer** | `npx playwright show-trace trace.zip` | Visual replay of each step |
+| Type                        | Command                                | Description                        |
+| --------------------------- | -------------------------------------- | ---------------------------------- |
+| 🧾 **HTML Report**          | `npx playwright show-report`           | Opens the full test report         |
+| 🎥 **Trace Viewer**         | `npx playwright show-trace trace.zip`  | Visual replay of each step         |
 | 📸 **Screenshots / Videos** | Configurable in `playwright.config.ts` | Captures evidence for failed tests |
 
 Reports are stored under:
+
 ```
 playwright-report/
 test-results/
 ```
-
-

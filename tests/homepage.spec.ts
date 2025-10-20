@@ -59,7 +59,7 @@ test.describe('Homepage test suite', () => {
   test('PactumJs "Click here" button test', async ({ page }) => {
     const homepage = new HompePage(page);
     const popupPromise = page.waitForEvent('popup');
-    await homepage.selectFifthClickHereBtn();
+    await homepage.clickFifthClickHereBtn();
     const youtubePage = await popupPromise;
 
     const ytPage = new YoutubePage(youtubePage);

@@ -11,7 +11,7 @@ test.describe('Homepage test suite', () => {
   test('k6 "Click here" button test', async ({ page }) => {
     const homepage = new HompePage(page);
     const popupPromise = page.waitForEvent('popup');
-    await homepage.selectFirstClickHereBtn();
+    await homepage.clickFirstClickHereBtn();
     const youtubePage = await popupPromise;
 
     const ytPage = new YoutubePage(youtubePage);
@@ -23,7 +23,7 @@ test.describe('Homepage test suite', () => {
   test('Playwright "Click here" button test', async ({ page }) => {
     const homepage = new HompePage(page);
     const popupPromise = page.waitForEvent('popup');
-    await homepage.selectSecondClickHereBtn();
+    await homepage.clickSecondClickHereBtn();
     const youtubePage = await popupPromise;
 
     const ytPage = new YoutubePage(youtubePage);
@@ -35,7 +35,7 @@ test.describe('Homepage test suite', () => {
   test('Cypress "Click here" button test', async ({ page }) => {
     const homepage = new HompePage(page);
     const popupPromise = page.waitForEvent('popup');
-    await homepage.selectThirdClickHereBtn();
+    await homepage.clickThirdClickHereBtn();
     const youtubePage = await popupPromise;
 
     const ytPage = new YoutubePage(youtubePage);
@@ -47,7 +47,7 @@ test.describe('Homepage test suite', () => {
   test('TestCafe "Click here" button test', async ({ page }) => {
     const homepage = new HompePage(page);
     const popupPromise = page.waitForEvent('popup');
-    await homepage.selectFourthClickHereBtn();
+    await homepage.clickFourthClickHereBtn();
     const youtubePage = await popupPromise;
 
     const ytPage = new YoutubePage(youtubePage);

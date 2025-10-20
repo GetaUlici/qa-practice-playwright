@@ -9,23 +9,23 @@ export class HompePage {
     this.clickHereBtn = page.getByRole('link', { name: 'CLICK HERE to get started!' });
   }
 
-  async selectFirstClickHereBtn() {
+  async clickFirstClickHereBtn() {
     await this.clickHereBtn.first().click();
   }
 
-  async selectSecondClickHereBtn() {
+  async clickSecondClickHereBtn() {
     await this.clickHereBtn.nth(1).click();
   }
 
-  async selectThirdClickHereBtn() {
+  async clickThirdClickHereBtn() {
     await this.clickHereBtn.nth(2).click();
   }
 
-  async selectFourthClickHereBtn() {
+  async clickFourthClickHereBtn() {
     await this.clickHereBtn.nth(3).click();
   }
 
-  async selectFifthClickHereBtn() {
+  async clickFifthClickHereBtn() {
     await this.clickHereBtn.nth(4).click();
   }
 }

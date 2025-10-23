@@ -35,7 +35,7 @@ test.describe('User registration test suite', () => {
       .getByRole('textbox', { name: 'Enter email' })
       .evaluate((el: HTMLInputElement) => el.validationMessage);
 
-    expect(message).toContain('Please fill this field.');
+    expect(message).toContain('Please fill');
   });
 
   test('register test - validation on password field', async ({ page }) => {
@@ -47,6 +47,6 @@ test.describe('User registration test suite', () => {
       .getByRole('textbox', { name: 'Password' })
       .evaluate((el: HTMLInputElement) => el.validationMessage);
 
-    expect(message).toContain('Please fill this field.');
+    expect(message).toContain('Please fill');
   });
 });

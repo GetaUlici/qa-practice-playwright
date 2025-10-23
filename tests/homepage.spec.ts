@@ -20,6 +20,19 @@ test.describe('Homepage test suite', () => {
     await ytPage.verifyk6LinkVisible();
   });
 
+  // test.only('demo', async ({ page }) => {
+  //   const homepage = new HompePage(page);
+  //   const page1Promise = page.waitForEvent('popup');
+  //   await homepage.clickFirstClickHereBtn();
+  //   const page1 = await page1Promise;
+  //       const ytPage = new YoutubePage(youtubePage);
+
+
+  //   await page1.getByRole('button', { name: 'Reject the use of cookies and' }).click();
+  //   await expect(page1.getByRole('link', { name: 'k6 - Load Testing' })).toBeVisible();
+
+  // });
+
   test('Playwright "Click here" button test', async ({ page }) => {
     const homepage = new HompePage(page);
     const popupPromise = page.waitForEvent('popup');

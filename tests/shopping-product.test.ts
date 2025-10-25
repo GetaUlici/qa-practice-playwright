@@ -1,23 +1,18 @@
-import { test, expect } from '@playwright/test';
-import { LeftSideMenuPage } from '../pages/left-side-menu.page';
-import { LoginPage } from '../pages/login.page';
-import { ProductsPage } from '../pages/products.page';
-import { DeliveryAddressPage } from '../pages/delievery-address.page';
+import { test, expect } from '../base';
 const baseUrl = 'https://qa-practice.razvanvancea.ro/';
 
 test.describe('Shopping product test suite', () => {
-  test.beforeEach(async ({ page }) => {
-    const leftSideMenuPage = new LeftSideMenuPage(page);
-
+  test.beforeEach(async ({ page, leftSideMenuPage }) => {
     await page.goto(`${baseUrl}`);
     await leftSideMenuPage.ecommerceBtn.click();
   });
 
-  test('Shopping a product test', async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    const productsPage = new ProductsPage(page);
-    const delieveryAddressPage = new DeliveryAddressPage(page);
-
+  test('Shopping a product test', async ({
+    page,
+    loginPage,
+    productsPage,
+    delieveryAddressPage,
+  }) => {
     await loginPage.doLogin('admin@admin.com', 'admin123');
     await expect(loginPage.logoutBtn).toBeVisible();
     await productsPage.selectFirstProduct();
@@ -30,10 +25,7 @@ test.describe('Shopping product test suite', () => {
     await expect(page.getByText('Congrats! Your order of $905.')).toBeVisible();
   });
 
-  test('Remove product from cart test', async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    const productsPage = new ProductsPage(page);
-
+  test('Remove product from cart test', async ({ page, loginPage, productsPage }) => {
     await loginPage.doLogin('admin@admin.com', 'admin123');
     await expect(loginPage.logoutBtn).toBeVisible();
     await productsPage.selectFirstProduct();

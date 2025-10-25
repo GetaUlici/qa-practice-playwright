@@ -20,12 +20,4 @@ export class DeliveryAddressPage {
   async selectDropdownOption(city: string) {
     await this.dropdownOption.selectOption(city);
   }
-
-  // async fillCity(city: string){
-  //     await this.cityField.fill(city);
-  // }
-
-  // async fillStreet(street: string) {
-  //     await this.streetField.fill(street);
-  // }
 }

@@ -1,6 +1,6 @@
 import { test, expect, Locator, Page } from '@playwright/test';
 
-export class RegistrationPage {
+export class RegisterPage {
   page: Page;
   firstNameField: Locator;
   lastNameField: Locator;

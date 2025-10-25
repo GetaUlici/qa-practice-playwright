@@ -1,5 +1,4 @@
-import { test, expect } from '@playwright/test';
-import { HompePage } from '../pages/home.page';
+import { test, expect } from '../base';
 const baseUrl = 'https://qa-practice.razvanvancea.ro/';
 
 test.describe('Homepage test suite', () => {
@@ -7,58 +6,38 @@ test.describe('Homepage test suite', () => {
     await page.goto(`${baseUrl}`);
   });
 
-  test('k6 "Click here" button test', async ({ page }) => {
-    const homepage = new HompePage(page);
-
-    const page1Promise = page.waitForEvent('popup');
-    await homepage.clickFirstClickHereBtn();
-    const page1 = await page1Promise;
-    await page1.getByRole('button', { name: 'Reject the use of cookies and' }).click();
-
-    await expect(page1.getByRole('link', { name: 'k6 - Load Testing' })).toBeVisible();
+  test('k6 "Click here" button test', async ({ page, homepage }) => {
+    await expect(homepage.clickHereBtn.first()).toHaveAttribute(
+      'href',
+      'https://www.youtube.com/watch?v=XR2MAivt-9E&list=PLI-8Z_bwV1wW4titIGcBdfJBtqyVXYLUC'
+    );
   });
 
-  test('Playwright "Click here" button test', async ({ page }) => {
-    const homepage = new HompePage(page);
-
-    const page1Promise = page.waitForEvent('popup');
-    await homepage.clickSecondClickHereBtn();
-    const page1 = await page1Promise;
-    await page1.getByRole('button', { name: 'Reject the use of cookies and' }).click();
-
-    await expect(page1.getByRole('link', { name: 'Playwright - E2E Reliable' })).toBeVisible();
+  test('Playwright "Click here" button test', async ({ page, homepage }) => {
+    await expect(homepage.clickHereBtn.nth(1)).toHaveAttribute(
+      'href',
+      'https://www.youtube.com/watch?v=j8HZpFjPPVU&list=PLI-8Z_bwV1wXPPWYnrr4eRba_9Z2XbjQ8'
+    );
   });
 
-  test('Cypress "Click here" button test', async ({ page }) => {
-    const homepage = new HompePage(page);
-
-    const page1Promise = page.waitForEvent('popup');
-    await homepage.clickThirdClickHereBtn();
-    const page1 = await page1Promise;
-    await page1.getByRole('button', { name: 'Reject the use of cookies and' }).click();
-
-    await expect(page1.getByRole('link', { name: 'E2E Testing - Cypress' })).toBeVisible();
+  test('Cypress "Click here" button test', async ({ page, homepage }) => {
+    await expect(homepage.clickHereBtn.nth(2)).toHaveAttribute(
+      'href',
+      'https://www.youtube.com/watch?v=m5dfyEQ5xis&list=PLI-8Z_bwV1wVQ3RzLDDjfin3owGQxxyBC'
+    );
   });
 
-  test('TestCafe "Click here" button test', async ({ page }) => {
-    const homepage = new HompePage(page);
-
-    const page1Promise = page.waitForEvent('popup');
-    await homepage.clickFourthClickHereBtn();
-    const page1 = await page1Promise;
-    await page1.getByRole('button', { name: 'Reject the use of cookies and' }).click();
-
-    await expect(page1.getByRole('link', { name: 'TestCafe - From 0 to Testing' })).toBeVisible();
+  test('TestCafe "Click here" button test', async ({ page, homepage }) => {
+    await expect(homepage.clickHereBtn.nth(3)).toHaveAttribute(
+      'href',
+      'https://www.youtube.com/watch?v=m5dfyEQ5xis&list=PLI-8Z_bwV1wXdMA-f1rBvjmIy0Qr9zfaE'
+    );
   });
 
-  test('PactumJs "Click here" button test', async ({ page }) => {
-    const homepage = new HompePage(page);
-
-    const page1Promise = page.waitForEvent('popup');
-    await homepage.clickFifthClickHereBtn();
-    const page1 = await page1Promise;
-    await page1.getByRole('button', { name: 'Reject the use of cookies and' }).click();
-
-    await expect(page1.getByRole('link', { name: 'API Automation - PactumJS' })).toBeVisible();
+  test('PactumJs "Click here" button test', async ({ page, homepage }) => {
+    await expect(homepage.clickHereBtn.nth(4)).toHaveAttribute(
+      'href',
+      'https://www.youtube.com/watch?v=UHoxxgxB6t8&list=PLI-8Z_bwV1wXUOnEH4gH2z6ctK4GtLrM4'
+    );
   });
 });
